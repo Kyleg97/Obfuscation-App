@@ -20,8 +20,8 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--optimizations !code/simplification/arithmetic,!code/simplification/cast,!field/*,!class/merging/*
--optimizationpasses 5
+#-optimizations !code/simplification/arithmetic,!code/simplification/cast,!field/*,!class/merging/*
+#-optimizationpasses 5
 
--repackageclasses
--allowaccessmodification
+#-repackageclasses
+#-allowaccessmodification

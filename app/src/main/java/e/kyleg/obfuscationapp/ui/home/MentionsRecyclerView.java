@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import e.kyleg.obfuscationapp.R;
+import e.kyleg.obfuscationapp.data.Mention;
 
 public class MentionsRecyclerView extends RecyclerView.Adapter<MentionsRecyclerView.ViewHolder> {
 
@@ -36,16 +37,20 @@ public class MentionsRecyclerView extends RecyclerView.Adapter<MentionsRecyclerV
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        HashMap map = (HashMap) mData.get(position);
+        /*HashMap map = (HashMap) mData.get(position);
         holder.ticker.setText(map.get("ticker").toString());
         holder.company.setText(map.get("company").toString());
-        holder.count.setText(map.get("count").toString());
+        holder.count.setText(map.get("count").toString());*/
+        Mention currentMention = (Mention) mData.get(position);
+        holder.ticker.setText(currentMention.getTicker());
+        holder.company.setText(currentMention.getCompany());
+        holder.count.setText(currentMention.getCountAsString());
     }
 
     // total number of rows
     @Override
     public int getItemCount() {
-        return mData.size();
+        return mData == null ? 0 : mData.size();
     }
 
 
