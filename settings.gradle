@@ -1,0 +1,2 @@
+rootProject.name='ObfuscationApp'
+include ':app'
